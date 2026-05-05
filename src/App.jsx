@@ -1,10 +1,11 @@
+import Home from "./pages/Home";
 import "./App.css";
 
 function App() {
   return (
-    <>
-      <h1>Welcome to my page</h1>
-    </>
+    <div>
+      <h1>Still Water Shelter</h1>
+    </div>
   );
 }
 
