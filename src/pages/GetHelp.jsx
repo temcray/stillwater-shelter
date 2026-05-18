@@ -1,21 +1,25 @@
+import { Link } from "react-router-dom";
+
 function GetHelp() {
   return (
-    <>
-      <Navbar />
-      <section style={{ padding: "60px 24px", textAlign: "center" }}>
-        <h1>Get Help</h1>
-        <p>If you need immediate support, click blow to start the process.</p>
+    <section className="hero">
+      <div className="hero-content">
+        <h1>Safe support when life feels uncertain.</h1>
+        <p>
+          Stillwater Shelter helps people find shelter, support services,
+          emergency resources, and a clear next step during difficult moments.
+        </p>
 
-        <Button>
-          <Link
-            to="/get-help"
-            style={{ color: "white", textDecoration: "none" }}
-          >
-            Connect with Shelter
+        <div className="hero-buttons">
+          <Link className="btn" to="/resources">
+            Get Help
           </Link>
-        </Button>
-      </section>
-    </>
+          <Link className="btn secondary" to="/contact">
+            Contact Us
+          </Link>
+        </div>
+      </div>
+    </section>
   );
 }
 

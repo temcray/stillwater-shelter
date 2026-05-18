@@ -1,16 +1,16 @@
-import Navbar from "../components/Navbar";
-import EmergencyBanner from "../components/EmergenyBanner";
+import EmergencyBanner from "../components/EmergencyBanner";
+import GetHelp from "../pages/GetHelp";
+import ServiceSelection from "../components/ServiceSelection";
 import Hero from "../components/Hero";
-import Footer from "../components/Footer";
 
 function Home() {
   return (
-    <main>
-      <Navbar />
-      <EmergenyBanner />
+    <>
+      <EmergencyBanner />
       <Hero />
-      <Footer />
-    </main>
+      <GetHelp />
+      <ServiceSelection />
+    </>
   );
 }
 

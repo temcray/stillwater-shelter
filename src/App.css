@@ -1,0 +1,215 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f3ee;
+  color: #2f2f2f;
+}
+
+main {
+  min-height: 80vh;
+}
+
+.navbar {
+  background: #ffffff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #d9822b;
+}
+
+.logo {
+  color: #8a4b20;
+  margin: 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  color: #d9822b;
+}
+
+.emergency-banner {
+  background: #8a2f1b;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+.emergency-banner p {
+  margin: 0.4rem 0 0;
+}
+
+.hero {
+  background: linear-gradient(rgba(80, 45, 20, 0.7), rgba(80, 45, 20, 0.7)),
+    url("https://images.unsplash.com/photo-1469571486292-b53601012a08?auto=format&fit=crop&w=1400&q=80");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  padding: 3rem 2rem;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  background: #d9822b;
+  color: white;
+  border: none;
+  padding: 0.85rem 1.3rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: #b9661f;
+}
+
+.btn.secondary {
+  background: white;
+  color: #8a4b20;
+}
+
+.services {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.services h2,
+.page h1 {
+  color: #8a4b20;
+}
+
+.section-text {
+  max-width: 650px;
+  margin: 0 auto 2rem;
+}
+
+.service-grid,
+.resource-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.service-card,
+.resource-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-top: 5px solid #d9822b;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: left;
+}
+
+.service-card h3,
+.resource-card h3 {
+  color: #8a4b20;
+}
+
+.page {
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.status-message {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #8a4b20;
+}
+
+.not-found {
+  text-align: center;
+}
+
+.footer {
+  background: #2f2f2f;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .service-grid,
+  .resource-list {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
