@@ -3,15 +3,13 @@ function About() {
     <section className="page">
       <h1>About Stillwater Shelter</h1>
       <p>
-        Stillwater Shelter is a resource-focused shelter application designed to
-        help people find support quickly. The goal is to make emergency help,
-        shelter information, and community resources easier to access.
-      </p>
-
-      <p>
-        This app was built with a user-centered approach, keeping in mind that
-        people looking for shelter may feel overwhelmed, scared, or unsure of
-        where to start.
+        Stillwater Shelter is a safe and supportive shelter created to help men,
+        women, and children experiencing homelessness, domestic violence,
+        financial hardship, or personal crisis feel safe, supported, and cared
+        for during difficult times. Our goal is to create a calming and
+        welcoming environment for both parents and children by supporting their
+        physical and emotional well-being while helping them access resources,
+        stability, and community support.
       </p>
     </section>
   );

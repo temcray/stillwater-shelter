@@ -22,7 +22,12 @@ function Contact() {
     e.preventDefault();
 
     emailjs
-      .send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", formData, "YOUR_PUBLIC_KEY")
+      .send(
+        "service_qznrj4i",
+        "template_jop8d62",
+        formData,
+        "A6-dQ2jUrUdz2ncDP",
+      )
       .then(() => {
         setStatus("Message sent successfully.");
         setFormData({ name: "", email: "", message: "" });

@@ -1,34 +1,37 @@
 import ServiceCard from "./ServiceCard";
+import { Link } from "react-router-dom";
 
-function ServiceSelection() {
+function ServicesSection() {
   const services = [
     {
-      title: "Emergency Shelter",
+      title: "Emergency Beds",
       description:
-        "Find short-term shelter options for individuals and families in crisis.",
+        "Safe temporary shelter for men, women, and children experiencing homelessness, domestic violence, financial hardship, or personal crisis.",
     },
     {
-      title: "Food Assistance",
+      title: "Counseling Support",
       description:
-        "Connect with local food pantries, meal programs, and community support.",
+        "Support from counselors and counseling students who are still in school and provide guidance under supervision.",
     },
     {
-      title: "Family Support",
+      title: "Hot Meals",
       description:
-        "Resources for parents, children, and families who need stability and care.",
+        "Warm meals provided to help guests feel cared for, supported, and physically nourished during their stay.",
     },
     {
-      title: "Job & Housing Resources",
+      title: "Daycare Support",
       description:
-        "Guidance for employment support, housing programs, and next-step planning.",
+        "A safe space for children while parents attend appointments, meet with staff, search for work, or handle important needs.",
     },
   ];
 
   return (
-    <section className="services">
-      <h2>How We Can Help</h2>
-      <p className="section-text">
-        Choose the type of support you need and find a safer next step.
+    <section className="services-section">
+      <h2>Our Services</h2>
+
+      <p className="services-intro">
+        Stillwater Shelter offers practical support for individuals and families
+        who need safety, care, and a clear next step.
       </p>
 
       <div className="service-grid">
@@ -40,8 +43,18 @@ function ServiceSelection() {
           />
         ))}
       </div>
+
+      <div className="services-cta">
+        <Link className="btn" to="/resources">
+          View Resources
+        </Link>
+
+        <Link className="btn secondary" to="/get-help">
+          Get Help
+        </Link>
+      </div>
     </section>
   );
 }
 
-export default ServiceSelection;
+export default ServicesSection;
