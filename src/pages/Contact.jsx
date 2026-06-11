@@ -1,81 +1,50 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import Button from "../components/Button";
 
 function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const formRef = useRef();
+  const [message, setMessage] = useState("");
 
-  const [status, setStatus] = useState("");
-
-  function handleChange(e) {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  }
-
-  function handleSubmit(e) {
+  const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
-      .send(
-        "service_qznrj4i",
-        "template_jop8d62",
-        formData,
-        "A6-dQ2jUrUdz2ncDP",
+      .sendForm(
+        import.meta.env.VITE_SERVICE_ID,
+        import.meta.env.VITE_TEMPLATE_ID,
+        formRef.current,
+        import.meta.env.VITE_PUBLIC_KEY,
       )
-      .then(() => {
-        setStatus("Message sent successfully.");
-        setFormData({ name: "", email: "", message: "" });
-      })
-      .catch(() => {
-        setStatus("Something went wrong. Please try again.");
-      });
-  }
+      .then(
+        () => {
+          setMessage("Message sent successfully!");
+          formRef.current.reset();
+          console.log("Email sent!");
+        },
+        (error) => {
+          setMessage("Failed to send message. Please try again.", error);
+          console.log("Error: ", error);
+        },
+      );
+  };
 
   return (
-    <section className="page">
-      <h1>Contact Stillwater Shelter</h1>
-      <p>
-        Send a message if you need help, have questions, or want more
-        information.
-      </p>
+    <section className="contact-form">
+      <h2>Contact</h2>
 
-      <form className="contact-form" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Your name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
-
-        <input
-          type="email"
-          name="email"
-          placeholder="Your email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-
+      <form ref={formRef} onSubmit={sendEmail} className="contact-form">
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
         <textarea
           name="message"
-          placeholder="How can we help?"
-          value={formData.message}
-          onChange={handleChange}
+          placeholder="Your Message is Welcome Here"
           required
         ></textarea>
-
-        <Button text="Send Message" type="submit" />
+        <button type="submit">Send Message</button>
       </form>
 
-      {status && <p className="status-message">{status}</p>}
+      {message && <p className="form-status">{message}</p>}
     </section>
   );
 }
