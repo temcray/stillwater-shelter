@@ -1,4 +1,11 @@
+import { useNavigate } from "react-router-dom";
+
 function GetHelp() {
+  const navigate = useNavigate();
+
+  function handleContact() {
+    navigate("/contact");
+  }
   return (
     <section className="page get-help-page">
       <div className="get-help-hero">
@@ -105,9 +112,9 @@ function GetHelp() {
           support during difficult moments in life.
         </p>
 
-        <a className="btn" href="/contact">
+        <button className="btn" onClick={() => handleContact()}>
           Contact Stillwater Shelter
-        </a>
+        </button>
       </div>
     </section>
   );
